@@ -83,5 +83,10 @@ class ProductsTableSeeder extends Seeder
             ])->categories()->attach(5);
         }
 
+        $p=Product::whereIn('id',[4,7,11,24,22] )->get();
+        foreach ($p as $item) {
+            $item->featured=true;
+            $item->save();
+        }
     }
 }
