@@ -53,7 +53,7 @@
                             @foreach($dataTypeRows as $row)
                                 <!-- GET THE DISPLAY OPTIONS -->
                                 @php
-                                    $options = json_decode($row->details);
+                                    $options = ($row->details);
                                     $display_options = isset($options->display) ? $options->display : NULL;
                                 @endphp
                                 @if ($options && isset($options->formfields_custom))
@@ -80,9 +80,9 @@
                                 <label>Categories</label>
 
                                 <ul style="list-style-type: none; padding-left: 0">
-                                @foreach ($allCategories as $category)
+                               {{-- @foreach ($allCategories as $category)
                                     <li><label><input value="{{ $category->id }}" type="checkbox" name="category[]" style="margin-right: 5px;" {{ $categoriesForProduct->contains($category) ? 'checked' : '' }}>{{ $category->name }}</label></li>
-                                @endforeach
+                                @endforeach--}}
                                 </ul>
                             </div> <!-- end form-group -->
 
@@ -110,7 +110,6 @@
     <div class="modal fade modal-danger" id="confirm_delete_modal">
         <div class="modal-dialog">
             <div class="modal-content">
-
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"
                             aria-hidden="true">&times;</button>

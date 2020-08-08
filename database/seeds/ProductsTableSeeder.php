@@ -71,7 +71,7 @@ class ProductsTableSeeder extends Seeder
         }
 
         // Cameras
-        for ($i = 1; $i <= 9; $i++) {
+        for ($i = 1; $i <= 1500; $i++) {
             Product::firstOrCreate([
                 'name' => 'Camera ' . $i,
                 'slug' => 'camera-' . $i,

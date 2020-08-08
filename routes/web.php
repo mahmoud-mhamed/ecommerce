@@ -50,3 +50,8 @@ Route::get('/thankyou', 'ConfirmationController@index')->name('confirmation.inde
 
 Route::patch('/cart/{product}', 'CartController@update')->name('cart.update');
 
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
